@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eric Poon | REALTOR® & Advisory Services | Toronto Real Estate</title>
+  <meta name="description"
+    content="Strategic residential real estate advisory, listing execution, and portfolio growth across the Toronto urban core and selective regional pockets. The Path Real Estate Team, RE/MAX Hallmark Realty Ltd., Brokerage.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#1A2530',
+              dark: '#111827',
+              accent: '#2CA478', // Signature Teal
+              accentLight: '#E8F5EE',
+              surface: '#FFFFFF',
+              surfaceAlt: '#F8FAFB',
+              border: '#E2E8F0',
+              muted: '#64748B'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            mono: ['JetBrains Mono', 'Menlo', 'Monaco', 'Courier New', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Lucide Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    .view-panel {
+      animation: fadeIn 0.25s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(3px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body
+  class="bg-brand-surfaceAlt text-brand-navy antialiased min-h-screen flex flex-col font-sans selection:bg-brand-accent selection:text-white">
+
+  <!-- ================= TOP NAVIGATION / HEADER ================= -->
+  <header class="sticky top-0 z-50 bg-brand-surface/95 backdrop-blur-md border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+
+      <!-- Brand Anchor -->
+      <a href="/profile" onclick="event.preventDefault(); navigateTo('profile');"
+        class="group cursor-pointer select-none">
+        <div class="font-bold text-lg tracking-tight text-brand-navy group-hover:text-brand-accent transition-colors">
+          ERIC POON
+        </div>
+        <div class="text-xs font-mono text-brand-muted tracking-wider">
+          REALTOR® // ADVISORY SERVICES
+        </div>
+      </a>
+
+      <!-- Desktop View Switcher -->
+      <nav class="hidden md:flex items-center gap-1 font-mono text-xs">
+        <button onclick="navigateTo('briefing')" id="nav-briefing"
+          class="nav-tab px-4 py-2 text-brand-navy font-semibold border-b-2 border-brand-accent transition-all cursor-pointer">
+          [01 // BRIEFING]
+        </button>
+        <button onclick="navigateTo('properties')" id="nav-properties"
+          class="nav-tab px-4 py-2 text-brand-muted hover:text-brand-navy border-b-2 border-transparent transition-all cursor-pointer">
+          [02 // PROPERTIES]
+        </button>
+        <button onclick="navigateTo('profile')" id="nav-profile"
+          class="nav-tab px-4 py-2 text-brand-muted hover:text-brand-navy border-b-2 border-transparent transition-all cursor-pointer">
+          [03 // THE PROFILE]
+        </button>
+        <button onclick="navigateTo('concierge')" id="nav-concierge"
+          class="nav-tab px-4 py-2 text-brand-muted hover:text-brand-navy border-b-2 border-transparent transition-all cursor-pointer">
+          [04 // CONCIERGE]
+        </button>
+      </nav>
+
+      <!-- Quick Action / Office Reference -->
+      <div class="flex items-center gap-5">
+        <div class="hidden lg:flex items-center gap-2 text-xs font-mono text-brand-muted">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-accent"></i>
+          <span>OFFICE: (416) 486-5588</span>
+        </div>
+        <button onclick="navigateTo('concierge', 'general-inquiry')"
+          class="group px-4 py-2 bg-brand-navy text-white hover:bg-brand-dark text-xs font-mono tracking-wider transition-all flex items-center gap-2 cursor-pointer">
+          <span>INQUIRE</span>
+          <i data-lucide="arrow-right"
+            class="w-3.5 h-3.5 text-brand-accent group-hover:translate-x-0.5 transition-transform"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Bar -->
+    <div
+      class="md:hidden border-t border-brand-border bg-brand-surface grid grid-cols-4 font-mono text-[11px] text-center">
+      <button onclick="navigateTo('briefing')" id="mob-briefing"
+        class="py-2.5 text-brand-navy font-semibold border-b-2 border-brand-accent cursor-pointer">01 BRIEF</button>
+      <button onclick="navigateTo('properties')" id="mob-properties"
+        class="py-2.5 text-brand-muted border-b-2 border-transparent cursor-pointer">02 PROPERTIES</button>
+      <button onclick="navigateTo('profile')" id="mob-profile"
+        class="py-2.5 text-brand-muted border-b-2 border-transparent cursor-pointer">03 PROFILE</button>
+      <button onclick="navigateTo('concierge')" id="mob-concierge"
+        class="py-2.5 text-brand-muted border-b-2 border-transparent cursor-pointer">04 INTAKE</button>
+    </div>
+  </header>
+
+
+  <!-- ================= VIEW 01: BRIEFING (HOME) ================= -->
+  <main id="view-briefing" class="view-panel flex-1 hidden">
+
+    <!-- Hero Section -->
+    <section class="max-w-7xl mx-auto px-6 py-16 md:py-24 border-b border-brand-border">
+      <div class="w-full space-y-6">
+        <span class="text-xs font-mono text-brand-accent tracking-widest uppercase">[DATA DRIVEN // OBJECTIVE
+          GUIDANCE]</span>
+        <h1 class="font-serif text-4xl sm:text-6xl text-brand-navy tracking-tight leading-[1.1]">
+          Clarity in Complex Markets. <br>
+          <span class="italic font-light text-brand-muted">Calculated for the Long Run.</span>
+        </h1>
+        <div class="w-full">
+          <p class="text-xs font-mono text-brand-muted leading-relaxed w-full max-w-none block">
+            Straightforward real estate guidance across Toronto and the surrounding areas, grounded in transparent data,
+            practical insight, and the intention to help you navigate your next move with clarity and care.
+          </p>
+        </div>
+        <div class="pt-6 flex flex-wrap gap-4">
+          <button onclick="navigateTo('properties')"
+            class="px-6 py-3.5 bg-brand-navy hover:bg-brand-dark text-white text-xs font-mono tracking-wider transition-all flex items-center gap-3 cursor-pointer">
+            <span>BROWSE CURRENT LISTINGS</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 text-brand-accent"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Operating Pillars / Core Tenets -->
+    <section class="max-w-7xl mx-auto px-6 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Pillar 01 -->
+        <div
+          class="p-6 bg-brand-surface border border-brand-border space-y-2 group hover:border-brand-accent transition-colors">
+          <span class="text-[10px] font-mono text-brand-accent font-bold uppercase tracking-wider">01 // DUAL
+            PERSPECTIVE</span>
+          <h3 class="font-serif text-lg font-semibold text-brand-navy group-hover:text-brand-accent transition-colors">
+            Consumer Alignment</h3>
+          <p class="text-xs text-brand-muted font-sans leading-relaxed">
+            Evaluated through the lens of a fellow homeowner and investor. Zero pressure, straightforward analysis, and
+            genuine respect for your balance sheet.
+          </p>
+        </div>
+
+        <!-- Pillar 02 -->
+        <div
+          class="p-6 bg-brand-surface border border-brand-border space-y-2 group hover:border-brand-accent transition-colors">
+          <span class="text-[10px] font-mono text-brand-accent font-bold uppercase tracking-wider">02 // CYCLE
+            RESILIENCE</span>
+          <h3 class="font-serif text-lg font-semibold text-brand-navy group-hover:text-brand-accent transition-colors">
+            Market Fundamentals</h3>
+          <p class="text-xs text-brand-muted font-sans leading-relaxed">
+            Navigating shifting rate cycles and volatility with verified neighborhood comps, intrinsic valuation, and
+            disciplined risk management.
+          </p>
+        </div>
+
+        <!-- Pillar 03 -->
+        <div
+          class="p-6 bg-brand-surface border border-brand-border space-y-2 group hover:border-brand-accent transition-colors">
+          <span class="text-[10px] font-mono text-brand-accent font-bold uppercase tracking-wider">03 // INSTITUTIONAL
+            BENCH</span>
+          <h3 class="font-serif text-lg font-semibold text-brand-navy group-hover:text-brand-accent transition-colors">
+            Collaborative Reach</h3>
+          <p class="text-xs text-brand-muted font-sans leading-relaxed">
+            Direct, high-touch personal engagement, backed by the deep transaction data, syndication, and network of The
+            Path and RE/MAX Hallmark.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= VIEW 02: PROPERTIES ================= -->
+  <main id="view-properties" class="view-panel hidden flex-1">
+    <section class="max-w-7xl mx-auto px-6 py-12 md:py-16 space-y-16">
+
+      <!-- FULL-WIDTH EXPANDED CONTAINER -->
+      <div class="w-full space-y-3">
+        <div class="text-xs font-mono text-brand-accent uppercase tracking-wider">
+          [CURRENT PROPERTIES // CLIENT MILESTONES]
+        </div>
+        <h2 class="text-4xl sm:text-5xl font-serif text-brand-navy leading-tight">
+          Active Opportunities &amp; Completed Moves
+        </h2>
+        <p class="text-xs font-mono text-brand-muted leading-relaxed w-full max-w-none">
+          A disciplined advisory record encompassing active representation, off-market acquisitions, and strategic
+          dispositions across Toronto’s urban core and premier enclaves.
+        </p>
+      </div>
+
+      <!-- ================= SECTION A: ACTIVE OPPORTUNITIES & CURRENT LISTINGS ================= -->
+      <div class="space-y-6">
+        <div class="flex items-center justify-between border-b border-brand-border pb-3">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
+            <h3 class="font-mono text-xs font-bold uppercase tracking-wider text-brand-navy">For Sale & Current
+              Representations</h3>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Listing Card 1: 1420 Dupont St #1408 -->
+          <div
+            class="bg-brand-surface border border-brand-border p-4 space-y-4 group transition-all duration-200 hover:border-brand-accent flex flex-col justify-between">
+            <div class="space-y-4">
+              <!-- Visual Container / Image -->
+              <a href="1420-dupont-1408.html"
+                class="block aspect-[16/10] bg-[#ECEEEF] overflow-hidden border border-brand-border relative">
+                <img src="images/1420-dupont-1408.jpg" alt="1420 Dupont Street Suite 1408"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  onerror="this.onerror=null; this.src='dupont-1408.jpg';">
+                <div
+                  class="absolute top-2.5 left-2.5 bg-brand-navy/90 text-white font-mono text-[9px] uppercase px-2 py-1 tracking-wider">
+                  Active Listing // Condominium
+                </div>
+              </a>
+
+              <!-- Property Metadata & Description -->
+              <div class="space-y-1.5">
+                <div class="text-[10px] font-mono text-brand-accent uppercase tracking-wider font-semibold">
+                  Junction Triangle // West End
+                </div>
+                <h4 class="font-serif text-lg text-brand-navy group-hover:text-brand-accent transition-colors">
+                  <a href="1420-dupont-1408.html">1420 Dupont Street, Suite 1408</a>
+                </h4>
+                <p class="text-xs text-brand-muted font-sans leading-relaxed line-clamp-3">
+                  High-floor residence delivering expansive open exposures and an efficient, light-filled layout.
+                  Positioned in one of the city's dynamic creative corridors with immediate proximity to transit and
+                  culinary anchors.
+                </p>
+              </div>
+            </div>
+
+            <!-- Bottom Specs & Action CTA -->
+            <div class="space-y-3 pt-3 border-t border-brand-border">
+              <div class="grid grid-cols-2 gap-2 font-mono text-[11px] text-brand-muted">
+                <div>Price: <span class="text-brand-navy font-medium">$515,000</span></div>
+                <div class="text-right">Type: <span class="text-brand-navy font-medium">2-Bed // 1-Bath</span></div>
+              </div>
+              <a href="1420-dupont-1408.html"
+                class="w-full py-2.5 bg-brand-surfaceAlt hover:bg-brand-navy hover:text-white border border-brand-border text-brand-navy font-mono text-[10px] tracking-wider transition-all flex items-center justify-center gap-1.5">
+                <span>VIEW DETAILS & SPECS</span>
+                <i data-lucide="arrow-right" class="w-3 h-3 text-brand-accent"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- OFF MARKET SEARCHES BOX -->
+        <div class="w-full border border-brand-border bg-white p-6 sm:p-8 space-y-4">
+          <h3 class="text-xl sm:text-2xl font-serif text-brand-navy">Off Market Searches</h3>
+
+          <p class="text-xs font-mono text-brand-muted leading-relaxed w-full">
+            Specific client mandates for off-market freehold homes and high-equity boutique condos are conducted under
+            non-disclosure agreements prior to MLS exposure.
+          </p>
+
+          <button onclick="navigateTo('concierge', 'portfolio-advisory')"
+            class="group block w-full py-3 bg-brand-surface border border-brand-border text-center text-xs font-mono tracking-wider text-brand-navy hover:bg-[#1b263b] hover:text-white hover:border-[#1b263b] transition-all duration-200 cursor-pointer">
+            <span>INQUIRE ON PRIVATE INVENTORY</span>
+            <span
+              class="inline-block ml-1 text-brand-accent transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
+          </button>
+        </div>
+
+        <!-- RECENT STORIES SECTION HEADER -->
+        <div class="w-full flex items-center justify-between pb-3 border-b border-brand-border">
+          <div class="text-[11px] font-mono font-bold tracking-wider text-brand-navy uppercase">
+            RECENT STORIES
+          </div>
+        </div>
+
+        <!-- 3-CARD GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 !mt-6">
+          <!-- CARD 1: BEACHES -->
+          <article
+            class="border border-brand-border bg-white flex flex-col justify-between hover:border-brand-accent transition-colors">
+            <div class="p-6 space-y-4">
+              <div class="flex items-center justify-between text-[10px] font-mono tracking-wider">
+                <span class="text-brand-accent font-medium">[LEASE // INCOME STRATEGY]</span>
+                <span class="text-brand-muted uppercase">BEACHES</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-serif text-brand-navy">Prime Beaches Home</h3>
+              </div>
+              <div class="w-full h-52 overflow-hidden border border-brand-border bg-brand-surface">
+                <img src="images/12-bingham.jpg" alt="Prime Beaches Home"
+                  class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-[1.02]"
+                  onerror="this.style.display='none'">
+              </div>
+            </div>
+            <div
+              class="px-6 py-4 border-t border-brand-border bg-brand-surface text-xs font-mono flex items-center justify-between text-brand-muted">
+              <div><span class="text-brand-navy font-semibold">OUTCOME:</span> Leased w/ Zero Vacancy</div>
+              <span class="text-brand-accent font-bold">&rarr;</span>
+            </div>
+          </article>
+
+          <!-- CARD 2: CHISHOLM -->
+          <article
+            class="border border-brand-border bg-white flex flex-col justify-between hover:border-brand-accent transition-colors">
+            <div class="p-6 space-y-4">
+              <div class="flex items-center justify-between text-[10px] font-mono tracking-wider">
+                <span class="text-brand-accent font-medium">[SALE // SELLER REP]</span>
+                <span class="text-brand-muted uppercase">WOODBINE-LUMSDINE</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-serif text-brand-navy">Family Home - Estate</h3>
+              </div>
+              <div class="w-full h-52 overflow-hidden border border-brand-border bg-brand-surface">
+                <img src="images/104-chisholm.jpg" alt="Family Home - Estate"
+                  class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-[1.02]"
+                  onerror="this.style.display='none'">
+              </div>
+            </div>
+            <div
+              class="px-6 py-4 border-t border-brand-border bg-brand-surface text-xs font-mono flex items-center justify-between text-brand-muted">
+              <div><span class="text-brand-navy font-semibold">OUTCOME:</span> Sold w/ Quick Close</div>
+              <span class="text-brand-accent font-bold">&rarr;</span>
+            </div>
+          </article>
+
+          <!-- CARD 3: GATWICK -->
+          <article
+            class="border border-brand-border bg-white flex flex-col justify-between hover:border-brand-accent transition-colors">
+            <div class="p-6 space-y-4">
+              <div class="flex items-center justify-between text-[10px] font-mono tracking-wider">
+                <span class="text-brand-accent font-medium">[SALE // SELLER REP]</span>
+                <span class="text-brand-muted uppercase">WOODBINE-LUMSDINE</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-serif text-brand-navy">Fully Renovated Bungalow</h3>
+              </div>
+              <div class="w-full h-52 overflow-hidden border border-brand-border bg-brand-surface">
+                <img src="images/69-gatwick.jpg" alt="Fully Renovated Bungalow"
+                  class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-[1.02]"
+                  onerror="this.style.display='none'">
+              </div>
+            </div>
+            <div
+              class="px-6 py-4 border-t border-brand-border bg-brand-surface text-xs font-mono flex items-center justify-between text-brand-muted">
+              <div><span class="text-brand-navy font-semibold">OUTCOME:</span> Seamless transition for Clients</div>
+              <span class="text-brand-accent font-bold">&rarr;</span>
+            </div>
+          </article>
+
+        </div> <!-- CLOSES THE 3-CARD GRID -->
+
+        <!-- FULL-WIDTH APPRAISAL BANNER -->
+        <div
+          class="w-full border border-brand-border bg-white p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 mt-6">
+          <div class="space-y-1.5 max-w-xl">
+            <h3 class="text-xl sm:text-2xl font-serif text-brand-navy">
+              Evaluate Your Property's Current Market Position
+            </h3>
+            <p class="text-xs font-mono text-brand-muted leading-relaxed">
+              Confidential equity reviews and hyper-local absorption reports prepared upon request.
+            </p>
+          </div>
+          <button onclick="navigateTo('concierge', 'listing-execution')"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#1b263b] text-white hover:bg-[#0d1b2a] text-xs font-mono tracking-wider uppercase transition-colors whitespace-nowrap self-start md:self-auto cursor-pointer">
+            <span>REQUEST A PROPERTY APPRAISAL</span>
+            <span class="text-brand-accent font-bold">&rarr;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ================= VIEW 03: THE PROFILE ================= -->
+  <main id="view-profile" class="view-panel hidden flex-1">
+    <section class="max-w-7xl mx-auto px-6 py-12 md:py-16">
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+        <!-- Left Column: Portrait & Credential Specs -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="bg-brand-surface border border-brand-border p-4 shadow-sm">
+            <div class="aspect-[4/5] bg-[#ECEEEF] overflow-hidden mb-4 border border-brand-border">
+              <img src="images/Eric.jpg" alt="Eric Poon" class="w-full h-full object-cover"
+                style="object-position: 50% 12%; image-rendering: -webkit-optimize-contrast; backface-visibility: hidden; transform: translateZ(0);"
+                onerror="this.onerror=null; this.src='Eric.jpg';">
+            </div>
+            <div class="space-y-1">
+              <h3 class="font-bold text-base text-brand-navy tracking-tight">ERIC POON</h3>
+              <p class="text-xs font-mono text-brand-accent font-semibold">REALTOR® // ADVISORY SERVICES</p>
+              <p class="text-xs font-mono">
+                <a href="https://beginyourpath.com" target="_blank" rel="noopener noreferrer"
+                  class="text-brand-muted hover:text-brand-accent transition-colors duration-200 inline-flex items-center gap-1 group">
+                  <span>THE PATH REAL ESTATE TEAM</span>
+                  <i data-lucide="arrow-up-right"
+                    class="w-3 h-3 text-brand-muted group-hover:text-brand-accent transition-colors"></i>
+                </a>
+              </p>
+              <p class="text-xs font-mono">
+                <a href="https://www.remaxhallmark.com/about" target="_blank" rel="noopener noreferrer"
+                  class="text-brand-muted hover:text-brand-accent transition-colors duration-200 inline-flex items-center gap-1 group">
+                  <span>RE/MAX HALLMARK REALTY LTD., BROKERAGE</span>
+                  <i data-lucide="arrow-up-right"
+                    class="w-3 h-3 text-brand-muted group-hover:text-brand-accent transition-colors"></i>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Editorial Narrative & Tenets -->
+        <div class="lg:col-span-7 space-y-8">
+          <div>
+            <span class="text-xs font-mono text-brand-accent tracking-widest uppercase">[PERSPECTIVE // OPERATING
+              STANDARD]</span>
+            <h2 class="font-serif text-3xl md:text-5xl text-brand-navy mt-1 leading-[1.15]">
+              Real Estate Guidance. <br>
+              <span class="italic font-light text-brand-muted">Built on Fundamentals.</span>
+            </h2>
+          </div>
+
+          <div class="space-y-5 text-brand-muted text-sm sm:text-base leading-relaxed font-sans">
+            <p>
+              Real estate decisions carry an emotional and financial weight that rarely translates onto a standard
+              balance sheet. Long before stepping into professional advisory, I experienced property decisions from the
+              other side of the table—as a consumer, homeowner, and investor. I understand the quiet pressure of
+              evaluating numbers that directly impact everyday living, long-term security, and family plans. That
+              perspective permanently informs how I practice.
+            </p>
+            <p>
+              Over the past half-decade, the Toronto market has moved through extreme cycles: rapid rate swings,
+              evolving regulatory frameworks, and constant media volatility. In periods of high market friction,
+              speculative hype and aggressive sales tactics become liabilities. What remains durable are disciplined
+              fundamentals—evaluating intrinsic asset quality, interrogating micro-market data, and possessing the
+              patience to walk away when the numbers fail to protect downside risk.
+            </p>
+            <p>
+              Advisory is not a transactional function; it is a long-term position. My role is to serve as an objective
+              sounding board—delivering clear-eyed counsel whether the prudent move is to execute, negotiate, or pause.
+              Supported by the analytical bench of <a href="https://beginyourpath.com" target="_blank"
+                rel="noopener noreferrer"
+                class="font-medium text-brand-navy hover:text-brand-accent transition-colors duration-200">The Path Real
+                Estate Team</a> and the collective infrastructure of RE/MAX Hallmark, my work is built around one
+              standard: protecting your capital and decisions with uncompromised clarity.
+            </p>
+          </div>
+
+          <!-- Professional Action Anchor -->
+          <div class="pt-4 flex flex-col sm:flex-row sm:items-center gap-4">
+            <button onclick="navigateTo('concierge', 'general-inquiry')"
+              class="px-6 py-3.5 bg-brand-navy text-white hover:bg-brand-dark text-xs font-mono tracking-wider transition-all flex items-center justify-center gap-3 cursor-pointer">
+              <span>INITIATE AN ADVISORY INQUIRY</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-brand-accent"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ================= VIEW 04: CONCIERGE (INTAKE & CONTACT) ================= -->
+  <main id="view-concierge" class="view-panel hidden flex-1">
+    <section class="max-w-7xl mx-auto px-6 py-12 md:py-16">
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-start">
+
+        <!-- Left Column: Direct Desk Details (5 Columns) -->
+        <div class="md:col-span-5 space-y-6">
+          <div>
+            <span class="text-xs font-mono text-brand-accent tracking-widest uppercase">[DIRECT DESK // INTAKE]</span>
+            <h2 class="font-serif text-3xl md:text-4xl text-brand-navy mt-1">Start a Conversation</h2>
+            <p class="text-xs text-brand-muted font-mono mt-2">
+              CONFIDENTIAL // ZERO-PRESSURE ADVISORY
+            </p>
+          </div>
+
+          <div class="space-y-4 font-mono text-xs">
+
+            <!-- Direct Inbox -->
+            <div class="p-4 bg-brand-surface border border-brand-border space-y-1">
+              <span class="text-brand-muted uppercase text-[10px]">Direct Inbox</span>
+              <div class="text-brand-navy font-bold text-sm">
+                <a href="mailto:eric.p@beginyourpath.com"
+                  class="hover:text-brand-accent transition-colors">eric.p@beginyourpath.com</a>
+              </div>
+            </div>
+
+            <!-- Brokerage Office Line -->
+            <div class="p-4 bg-brand-surface border border-brand-border space-y-1 group cursor-default">
+              <span class="text-brand-muted uppercase text-[10px]">Brokerage Office Line</span>
+              <div
+                class="text-brand-navy font-bold text-sm transition-colors duration-200 group-hover:text-brand-accent">
+                (416) 486-5588
+              </div>
+              <div class="text-[10px] text-brand-muted">Switchboard / Reception (RECO Compliance)</div>
+            </div>
+
+            <!-- Office Headquarters (Live Google Maps Link) -->
+            <div class="p-4 bg-brand-surface border border-brand-border space-y-1">
+              <span class="text-brand-muted uppercase text-[10px]">Office Headquarters</span>
+              <div class="text-brand-navy font-bold">RE/MAX Hallmark Realty Ltd., Brokerage</div>
+              <div>
+                <a href="https://www.google.com/maps/search/?api=1&query=1920+Yonge+St+%23500,+Toronto,+ON+M4S+3E2"
+                  target="_blank" rel="noopener noreferrer"
+                  class="text-brand-muted hover:text-brand-accent transition-colors duration-200 inline-flex items-center gap-1.5 group">
+                  <span>1920 Yonge St #500, Toronto, ON M4S 3E2</span>
+                  <i data-lucide="arrow-up-right"
+                    class="w-3 h-3 text-brand-muted group-hover:text-brand-accent transition-colors"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Column: Intake Form (7 Columns) -->
+        <div class="md:col-span-7 bg-brand-surface border border-brand-border p-6 md:p-8 shadow-sm">
+          <div class="mb-6 pb-4 border-b border-brand-border">
+            <h3 class="font-serif text-xl sm:text-2xl text-brand-navy">Advisory Inquiry Brief</h3>
+            <p class="text-xs text-brand-muted font-mono mt-1">Direct submission to Eric Poon. Response within 1
+              business day.</p>
+          </div>
+
+          <!-- SUCCESS CONFIRMATION PANEL (HIDDEN BY DEFAULT) -->
+          <div id="form-success-message"
+            class="hidden p-6 bg-brand-accentLight border border-brand-accent text-brand-navy space-y-2 mb-6">
+            <div class="flex items-center gap-2 font-mono text-xs font-bold uppercase text-brand-accent">
+              <i data-lucide="check-circle" class="w-4 h-4"></i>
+              <span>Transmission Received</span>
+            </div>
+            <p class="font-serif text-lg">Thank you. Your message has been sent directly to Eric Poon.</p>
+            <p class="text-xs font-mono text-brand-muted leading-relaxed">
+              Inquiries are reviewed with strict confidentiality. You will receive direct counsel within one business
+              day.
+            </p>
+          </div>
+
+          <!-- NETLIFY INTAKE FORM (CLEAN NATIVE SUBMISSION) -->
+          <form id="contact-form" name="advisory-intake" method="POST" action="/concierge?submitted=true"
+            data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+            <input type="hidden" name="form-name" value="advisory-intake">
+            <p class="hidden">
+              <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-[11px] font-mono text-brand-muted uppercase mb-1">Your Name *</label>
+                <input type="text" name="name" required
+                  class="w-full px-3 py-2 bg-brand-surfaceAlt border border-brand-border text-xs text-brand-navy focus:border-brand-accent focus:outline-none transition-colors">
+              </div>
+              <div>
+                <label class="block text-[11px] font-mono text-brand-muted uppercase mb-1">Email Address *</label>
+                <input type="email" name="email" required
+                  class="w-full px-3 py-2 bg-brand-surfaceAlt border border-brand-border text-xs text-brand-navy focus:border-brand-accent focus:outline-none transition-colors">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-[11px] font-mono text-brand-muted uppercase mb-1">Primary Focus *</label>
+              <select id="focus-select" name="focus" required
+                class="w-full px-3 py-2 bg-brand-surfaceAlt border border-brand-border text-xs text-brand-navy focus:border-brand-accent focus:outline-none transition-colors">
+                <option value="residential-purchase">Residential Home Purchase</option>
+                <option value="listing-execution">Strategic Property Sale / Listing</option>
+                <option value="portfolio-advisory">Investment Portfolio Consultation</option>
+                <option value="general-inquiry">General Real Estate Guidance</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-[11px] font-mono text-brand-muted uppercase mb-1">Details &amp;
+                Objectives</label>
+              <textarea name="message" rows="4"
+                placeholder="Brief notes on timeline, location preference, or specific property questions..."
+                class="w-full px-3 py-2 bg-brand-surfaceAlt border border-brand-border text-xs text-brand-navy focus:border-brand-accent focus:outline-none transition-colors font-sans"></textarea>
+            </div>
+
+            <button type="submit" id="submit-btn"
+              class="w-full py-3.5 bg-brand-navy hover:bg-brand-dark text-white text-xs font-mono tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer">
+              <span>SUBMIT INQUIRY</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-brand-accent"></i>
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="mt-auto border-t border-brand-border bg-brand-surface text-brand-muted text-xs font-mono py-8">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex items-center">
+        <img src="images/pathxremax.png" alt="The Path Real Estate Team | RE/MAX Hallmark Realty Ltd."
+          class="h-10 sm:h-11 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+          onerror="this.onerror=null; this.src='pathxremax.png';">
+      </div>
+      <div class="text-[10px] text-center md:text-right space-y-1 text-brand-muted/70">
+        <div>1920 Yonge St #500, Toronto, ON M4S 3E2</div>
+        <div>Not intended to solicit clients currently under agency contract.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT: CLEAN URL ROUTING & STATE ================= -->
+  <script>
+    const VIEWS = ['briefing', 'properties', 'profile', 'concierge'];
+
+    function navigateTo(viewId, presetFocus = null, shouldScroll = true) {
+      if (!VIEWS.includes(viewId)) {
+        viewId = 'briefing';
+      }
+
+      VIEWS.forEach(v => {
+        const viewEl = document.getElementById('view-' + v);
+        const navEl = document.getElementById('nav-' + v);
+        const mobEl = document.getElementById('mob-' + v);
+
+        if (v === viewId) {
+          if (viewEl) viewEl.classList.remove('hidden');
+
+          if (navEl) {
+            navEl.classList.remove('text-brand-muted', 'border-transparent');
+            navEl.classList.add('text-brand-navy', 'font-semibold', 'border-brand-accent');
+          }
+          if (mobEl) {
+            mobEl.classList.remove('text-brand-muted', 'border-transparent');
+            mobEl.classList.add('text-brand-navy', 'font-semibold', 'border-brand-accent');
+          }
+        } else {
+          if (viewEl) viewEl.classList.add('hidden');
+
+          if (navEl) {
+            navEl.classList.remove('text-brand-navy', 'font-semibold', 'border-brand-accent');
+            navEl.classList.add('text-brand-muted', 'border-transparent');
+          }
+          if (mobEl) {
+            mobEl.classList.remove('text-brand-navy', 'font-semibold', 'border-brand-accent');
+            mobEl.classList.add('text-brand-muted', 'border-transparent');
+          }
+        }
+      });
+
+      // Sets clean path (e.g. /properties or /) without any #
+      const cleanPath = viewId === 'briefing' ? '/' : '/' + viewId;
+      window.history.replaceState(null, '', cleanPath);
+
+      // Pre-select dropdown if passed from appraisal or inventory button
+      if (presetFocus) {
+        const selectEl = document.getElementById('focus-select');
+        if (selectEl) selectEl.value = presetFocus;
+      }
+
+      if (shouldScroll) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    }
+
+    // Runs on load: handles direct clean URLs (e.g., /properties) and form submission state
+    (function initActiveView() {
+      const searchParams = new URLSearchParams(window.location.search);
+      const isSubmitted = searchParams.get('submitted') === 'true';
+
+      const pathSegment = window.location.pathname.replace(/^\/|\/$/g, '');
+      const hashSegment = window.location.hash.replace('#', '');
+
+      let initialView = 'briefing';
+      if (isSubmitted) {
+        initialView = 'concierge';
+      } else if (VIEWS.includes(pathSegment)) {
+        initialView = pathSegment;
+      } else if (VIEWS.includes(hashSegment)) {
+        initialView = hashSegment;
+      }
+
+      navigateTo(initialView, null, false);
+
+      if (isSubmitted) {
+        const successPanel = document.getElementById('form-success-message');
+        const intakeForm = document.getElementById('contact-form');
+        if (successPanel) successPanel.classList.remove('hidden');
+        if (intakeForm) intakeForm.classList.add('hidden');
+
+        // Strips ?submitted=true from address bar cleanly
+        window.history.replaceState({}, document.title, '/concierge');
+      }
+    })();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1420 Dupont Street, Suite 1408 | Eric Poon // REALTOR®</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0d1b2a',
+                            dark: '#1b263b',
+                            accent: '#0d9488',
+                            accentLight: '#E8F5EE',
+                            muted: '#64748b',
+                            border: '#e2e8f0',
+                            surface: '#f8fafc'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="bg-white text-brand-navy antialiased min-h-screen flex flex-col selection:bg-brand-accent selection:text-white">
+
+    <!-- UNIFIED CONTAINER WITH BALANCED 32px VERTICAL RHYTHM -->
+    <main class="max-w-6xl mx-auto px-6 py-8 w-full space-y-8">
+
+        <!-- 01. TOP SUB-NAV BAR (CLEAN LINK BACK TO PROPERTIES) -->
+        <div class="w-full flex items-center justify-between pb-6 border-b border-brand-border text-xs font-mono">
+            <a href="/properties"
+                class="text-brand-muted hover:text-brand-navy transition-colors flex items-center gap-1.5">
+                <span>&larr;</span> RETURN TO [02 // PROPERTIES]
+            </a>
+            <div class="flex items-center gap-6">
+                <span class="text-brand-muted hidden sm:inline">OFFICE: (416) 486-5588</span>
+                <a href="#inquiry"
+                    class="px-4 py-2 bg-brand-navy text-white hover:bg-brand-dark transition-colors tracking-wider flex items-center gap-2">
+                    <span>SCHEDULE SHOWING</span>
+                    <span class="text-brand-accent font-bold">&darr;</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 02. EDITORIAL PROPERTY TITLE HEADER -->
+        <div class="w-full space-y-2">
+            <div class="flex items-center gap-2.5 text-[10px] font-mono tracking-wider">
+                <span class="text-brand-accent font-medium">
+                    [CONDOMINIUM // MLS EXCLUSIVE]
+                </span>
+                <span class="text-brand-muted px-2 py-0.5 border border-brand-border bg-brand-surface">
+                    TORONTO // JUNCTION TRIANGLE
+                </span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl font-serif text-brand-navy">
+                1420 Dupont Street
+            </h1>
+            <p class="text-2xl sm:text-3xl font-serif italic text-brand-muted">
+                Suite 1408
+            </p>
+            <p class="text-sm font-sans text-brand-muted leading-relaxed pt-1 w-full">
+                A high floor two bedroom corner suite, sizeable living area and direct UP/GO transit access in the
+                Junction Triangle.
+            </p>
+        </div>
+
+        <!-- 03. PHOTO GALLERY -->
+        <div class="w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 h-[440px] sm:h-[500px]">
+
+                <!-- Primary Feature Photo (Left: 8 cols) - BEDROOM -->
+                <div class="lg:col-span-8 h-full overflow-hidden border border-brand-border bg-brand-navy/5">
+                    <img src="images/1420-dupont-1.jpg" alt="1420 Dupont Street Suite 1408 - Primary Bedroom"
+                        class="w-full h-full object-cover object-center" loading="eager"
+                        onerror="this.onerror=null; this.src='1420-dupont-1408.jpg';">
+                </div>
+
+                <!-- Supporting Column (Right: 4 cols) -->
+                <div class="lg:col-span-4 grid grid-rows-2 gap-4 h-full">
+                    <!-- Top Right: Living Area with TV -->
+                    <div class="h-full overflow-hidden border border-brand-border bg-brand-navy/5">
+                        <img src="images/1420-dupont-2.jpg" alt="1420 Dupont Street Suite 1408 - Living Area"
+                            class="w-full h-full object-cover object-center" loading="lazy">
+                    </div>
+
+                    <!-- Bottom Right: Dining / Balcony View -->
+                    <div class="h-full overflow-hidden border border-brand-border bg-brand-navy/5">
+                        <img src="images/1420-dupont-3.jpg" alt="1420 Dupont Street Suite 1408 - Dining Area"
+                            class="w-full h-full object-cover object-center" loading="lazy">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 04. SPECS & NARRATIVE SECTION -->
+        <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+
+            <!-- Left Column: Specs Breakdown & Anchors (5 cols) -->
+            <div class="lg:col-span-5 space-y-4">
+
+                <!-- Price & Specs Table -->
+                <div class="border border-brand-border p-5 font-mono text-xs space-y-2.5 bg-white">
+                    <div
+                        class="text-xs uppercase font-bold text-brand-navy pb-2.5 border-b border-brand-border flex items-center justify-between">
+                        <span>Price</span>
+                        <span class="text-brand-accent text-sm font-semibold">$515,000</span>
+                    </div>
+
+                    <div class="flex justify-between py-1 border-b border-brand-border/60">
+                        <span class="text-brand-muted">Layout</span>
+                        <span class="font-medium text-brand-navy">2 Bed / 1 Bath</span>
+                    </div>
+
+                    <div class="flex justify-between py-1 border-b border-brand-border/60">
+                        <span class="text-brand-muted">Parking</span>
+                        <span class="font-medium text-brand-navy">1</span>
+                    </div>
+
+                    <div class="flex justify-between py-1 border-b border-brand-border/60">
+                        <span class="text-brand-muted">Size</span>
+                        <span class="font-medium text-brand-navy">677 sq/ft (Builder)</span>
+                    </div>
+
+                    <div class="flex justify-between py-1 border-b border-brand-border/60">
+                        <span class="text-brand-muted">Builder</span>
+                        <span class="font-medium text-brand-navy">Neudorfer Corporation</span>
+                    </div>
+
+                    <div class="flex justify-between py-1">
+                        <span class="text-brand-muted">Management</span>
+                        <span class="font-medium text-brand-navy">Berkley Property Management</span>
+                    </div>
+                </div>
+
+                <!-- Neighbourhood Anchors Box -->
+                <div class="border border-brand-border p-4 font-mono text-xs bg-white space-y-1.5">
+                    <div class="text-brand-accent uppercase text-[11px] font-semibold">[NEIGHBOURHOOD ANCHORS]</div>
+                    <p class="text-brand-muted text-[11px] leading-relaxed">
+                        Celebrated artisanal dining corridor and Geary Avenue—renowned for destination bakeries,
+                        inventive kitchens, and the city's best craft breweries.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Editorial Narrative (7 cols) -->
+            <div class="lg:col-span-7 space-y-3">
+                <div>
+                    <span class="text-xs font-mono text-brand-accent uppercase tracking-wider">[DESCRIPTION //
+                        HIGHLIGHTS]</span>
+                    <h2 class="text-2xl font-serif text-brand-navy mt-1">Functional Corner Unit</h2>
+                </div>
+
+                <div class="text-sm font-sans text-brand-muted leading-relaxed space-y-3">
+                    <p>
+                        Suite 1408 is a corner residence defined by daylight, clean proportions, and spatial efficiency.
+                        The open floor plate captures natural light across dual exposures, opening onto a private
+                        balcony with unobstructed urban views. A well planned layout eliminates dead space, balancing
+                        daily living and work from home utility.
+                    </p>
+                    <p>
+                        1420 Dupont provides comprehensive resident amenities built for convenience: concierge security,
+                        fully equipped fitness facilities, outdoor terrace with BBQ stations, bicycle storage and plenty
+                        of visitor parking.
+                    </p>
+                    <p>
+                        Anchored in the Junction Triangle, the address connects directly to the West Toronto Railpath,
+                        independent cafes, and Wallace-Emerson's civic revitalization. Transit access is exceptional:
+                        minutes from the UP Express and Bloor GO for a direct, 8 minute commute to Union Station and
+                        rapid transit to Pearson Airport.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 05. PRIVATE SHOWING & INQUIRY FORM -->
+        <div id="inquiry" class="w-full pt-4">
+            <div class="border border-brand-border bg-white p-8 sm:p-10 max-w-2xl mx-auto space-y-6">
+                <div class="text-center space-y-1.5">
+                    <h3 class="text-xl sm:text-2xl font-serif italic text-brand-navy">Request Private Showing &
+                        Documents</h3>
+                    <p class="text-xs font-mono text-brand-muted">Direct advisory inquiry, status certificate review,
+                        and accompanied private viewings.</p>
+                </div>
+
+                <!-- SUCCESS CONFIRMATION PANEL (HIDDEN BY DEFAULT) -->
+                <div id="showing-success-panel"
+                    class="hidden p-6 bg-brand-surface border border-brand-accent text-brand-navy space-y-2">
+                    <div class="flex items-center gap-2 font-mono text-xs font-bold uppercase text-brand-accent">
+                        <i data-lucide="check-circle" class="w-4 h-4"></i>
+                        <span>Request Transmitted</span>
+                    </div>
+                    <p class="font-serif text-lg">Thank you. Your showing request for Suite 1408 has been received.</p>
+                    <p class="text-xs font-mono text-brand-muted leading-relaxed">
+                        Eric Poon will contact you directly within one business day to coordinate access protocols and
+                        provide requested documentation.
+                    </p>
+                </div>
+
+                <!-- NATIVE NETLIFY PROPERTY INTAKE FORM (CLEAN REDIRECT) -->
+                <form id="showing-form" name="property-inquiry" method="POST" action="/1420-dupont-1408?submitted=true"
+                    data-netlify="true" netlify-honeypot="bot-field" class="space-y-4 text-xs font-mono">
+                    <input type="hidden" name="form-name" value="property-inquiry">
+                    <input type="hidden" name="property" value="1420 Dupont Street, Suite 1408">
+
+                    <p class="hidden">
+                        <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-brand-muted uppercase mb-1">Full Name *</label>
+                            <input type="text" name="name" required
+                                class="w-full bg-white border border-brand-border px-3 py-2 text-brand-navy focus:outline-none focus:border-brand-accent">
+                        </div>
+                        <div>
+                            <label class="block text-brand-muted uppercase mb-1">Email *</label>
+                            <input type="email" name="email" required
+                                class="w-full bg-white border border-brand-border px-3 py-2 text-brand-navy focus:outline-none focus:border-brand-accent">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-brand-muted uppercase mb-1">Inquiry Type *</label>
+                        <select name="inquiry_type" required
+                            class="w-full bg-white border border-brand-border px-3 py-2 text-brand-navy focus:outline-none focus:border-brand-accent">
+                            <option value="Private Walkthrough">Request Private Walkthrough</option>
+                            <option value="Status Certificate">Request Status Certificate & Legal Docs</option>
+                            <option value="Investor Breakdown">Investor Financial Breakdown / Cap Rate</option>
+                            <option value="General Inquiries">General Inquiries</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-brand-muted uppercase mb-1">Message / Preferred Timing</label>
+                        <textarea name="message" rows="3"
+                            class="w-full bg-white border border-brand-border px-3 py-2 text-brand-navy focus:outline-none focus:border-brand-accent"
+                            placeholder="I would like to coordinate a private showing for Suite 1408..."></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full py-3 bg-brand-navy text-white hover:bg-brand-dark tracking-wider uppercase transition-colors font-semibold cursor-pointer">
+                        Submit Request &rarr;
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+
+        // Handles form submission detection from URL query params
+        (function checkSubmissionState() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('submitted') === 'true') {
+                const successPanel = document.getElementById('showing-success-panel');
+                const formEl = document.getElementById('showing-form');
+                if (successPanel) successPanel.classList.remove('hidden');
+                if (formEl) formEl.classList.add('hidden');
+
+                // Strips ?submitted=true from address bar cleanly
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        })();
+    </script>
+</body>
+
+</html>
