@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1485 Gerrard Street East | Eric Poon // REALTOR®</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0d1b2a',
+                            dark: '#1b263b',
+                            accent: '#0d9488',
+                            accentLight: '#E8F5EE',
+                            muted: '#64748b',
+                            border: '#e2e8f0',
+                            surface: '#f8fafc'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="bg-white text-brand-navy antialiased min-h-screen flex flex-col selection:bg-brand-accent selection:text-white">
+
+    <!-- UNIFIED CONTAINER WITH BALANCED 32px VERTICAL RHYTHM -->
+    <main class="max-w-6xl mx-auto px-6 py-8 w-full space-y-8">
+
+        <!-- 01. TOP SUB-NAV BAR (CLEAN LINK BACK TO PROPERTIES) -->
+        <div class="w-full flex items-center justify-between pb-6 border-b border-brand-border text-xs font-mono">
+            <a href="/properties"
+                class="text-brand-muted hover:text-brand-navy transition-colors flex items-center gap-1.5">
+                <span>&larr;</span> RETURN TO [02 // PROPERTIES]
+            </a>
+            <div class="flex items-center gap-6">
+                <span class="text-brand-muted hidden sm:inline">OFFICE: (416) 486-5588</span>
+                <a href="#inquiry"
+                    class="px-4 py-2 bg-brand-navy text-white hover:bg-brand-dark transition-colors tracking-wider flex items-center gap-2">
+                    <span>SCHEDULE SHOWING</span>
+                    <span class="text-brand-accent font-bold">&darr;</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 02. EDITORIAL PROPERTY TITLE HEADER -->
+        <div class="w-full space-y-2">
+            <div class="flex items-center gap-2.5 text-[10px] font-mono tracking-wider">
+                <span class="text-brand-accent font-medium">
+                    [MIXED-USE FREEHOLD // MLS ACTIVE]
+                </span>
+                <span class="text-brand-muted px-2 py-0.5 border border-brand-border bg-brand-surface">
+                    TORONTO // GERRARD INDIA BAZAAR
+                </span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl font-serif text-brand-navy">
+                1485 Gerrard Street East
+            </h1>
+            <p class="text-2xl sm:text-3xl font-serif italic text-brand-muted">
+                Storefront & Residential Mix
+            </p>
+            <p class="text-sm font-sans text-brand-muted leading-relaxed pt-1 w-full">
+                Substantial commercial-residential freehold property positioned within the vibrant Gerrard India Bazaar corridor, offering dynamic retail exposure and upper residential tenancy.
+            </p>
+        </div>
+
+        <!-- 03. PHOTO GALLERY -->
+        <div class="w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 h-[440px] sm:h-[500px]">
+
+                <!-- Primary Feature Photo (Left: 8 cols) -->
+                <div class="lg:col-span-8 h-full overflow-hidden border border-brand-border bg-brand-navy/5">
+                    <img src="images/1485-gerrard.jpg" alt="1485 Gerrard Street East - Exterior Frontage"
+                        class="w-full h-full object-cover object-center" loading="eager"
+                        onerror="this.onerror=null; this.src='images/1485-gerrard.jpg';">
+                </div>
+
+                <!-- Supporting Column (Right: 4 cols) -->
+                <div class="lg:col-span-4 grid grid-rows-2 gap-4 h-full">
+                    <div class="h-full overflow-hidden border border-brand-border bg-brand-navy/5">
+                        <img src="images/1485-gerrard-interior.jpg" alt="1485 Gerrard Street East - Interior Retail"
+                            class="w-full h-full object-cover object-center" loading="lazy"
+                            onerror="this.onerror=null; this.src='images/1485-gerrard.jpg';">
+                    </div>
+                    <div class="h-full overflow-hidden border border-brand-border bg-brand-navy/5">
+                        <img src="images/1485-gerrard-upper.jpg" alt="1485 Gerrard Street East - Upper Level"
+                            class="w-full h-full object-cover object-center" loading="lazy"
+                            onerror="this.onerror=null; this.src='images/1485-gerrard.jpg';">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 04. SPECS & NARRATIVE SECTION -->
+        <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+
+            <!-- Left Column: Specs Breakdown & Anchors (5 cols) -->
+            <div class="lg:col-span-5 space-y-4">
+
+                <!-- Price & Specs Table -->
+                <div class="border border-brand-border p-5 font-mono text-xs space-y-2.5 bg-white">
+                    <div
+                        class="text-xs uppercase font-bold text-brand-navy pb-2.5 border-b border-brand-border flex items-center justify-between">
+                        <span>Price</span>
+                        <span class="text-brand-accent text-sm font-semibold">$1,490,000</span>
+                    </div>
+
+                    <div class="flex justify-between py-1 border-b border-brand-border/60">
+                        <span class="text-brand-muted">Asset Type</span>
+                        <span class="font-medium text-brand-navy">Commercial / Residential Mix</span>
+                    </div>
+
+                    <div class="flex justify-between py-1 border-b border-brand-border/60">
+                        <span class="text-brand-muted">Building Size</span>
+                        <span class="font-medium text-brand-navy">Approx. 2,800 sq/ft</span>
+                    </div>
+
+                    <div class="flex justify-between py-1 border-b border-brand-border/60">
+                        <span class="text-brand-muted">Lot Dimensions</span>
+                        <span class="font-medium text-brand-navy">16.33 ft × 100 ft</span>
+                    </div>
+
+                    <div class="flex justify-between py-1 border-b border-brand-border/60">
+                        <span class="text-brand-muted">Parking</span>
+                        <span class="font-medium text-brand-navy">2 Dedicated Rear Spaces</span>
+                    </div>
+
+                    <div class="flex justify-between py-1 border-b border-brand-border/60">
+                        <span class="text-brand-muted">Zoning</span>
+                        <span class="font-medium text-brand-navy">CR 2.0 (c1.0; r2.0)</span>
+                    </div>
+
+                    <div class="flex justify-between py-1">
+                        <span class="text-brand-muted">Annual Taxes</span>
+                        <span class="font-medium text-brand-navy">$9,704 / yr (Approx.)</span>
+                    </div>
+                </div>
+
+                <!-- Neighbourhood Anchors Box -->
+                <div class="border border-brand-border p-4 font-mono text-xs bg-white space-y-1.5">
+                    <div class="text-brand-accent uppercase text-[11px] font-semibold">[NEIGHBOURHOOD ANCHORS]</div>
+                    <p class="text-brand-muted text-[11px] leading-relaxed">
+                        Surrounded by the eclectic dining and retail of the Gerrard India Bazaar, with Leslieville immediately to the south and Danforth transit to the north. Steady pedestrian density and reliable tenant interest.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Editorial Narrative (7 cols) -->
+            <div class="lg:col-span-7 space-y-3">
+                <div>
+                    <span class="text-xs font-mono text-brand-accent uppercase tracking-wider">[DESCRIPTION // HIGHLIGHTS]</span>
+                    <h2 class="text-2xl font-serif text-brand-navy mt-1">High-Exposure Freehold Asset</h2>
+                </div>
+
+                <div class="text-sm font-sans text-brand-muted leading-relaxed space-y-3">
+                    <p>
+                        1485 Gerrard Street East presents an exceptional urban investment opportunity within an evolving east-end commercial pocket. Featuring a versatile ground-level retail/commercial footprint paired with full residential space above, the asset provides balanced income generation and defensive capital protection.
+                    </p>
+                    <p>
+                        The ground level benefits from direct sidewalk frontage, excellent pedestrian visibility, and adaptable square footage suitable for boutique retail, professional services, or creative work studios. The second floor offers a spacious residential layout with independent access.
+                    </p>
+                    <p>
+                        With 100 feet of lot depth, two rear parking spaces, and CR zoning supporting flexible commercial-residential operations, this property serves as a durable long-term play for both end-user operators and portfolio-minded investors.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 05. PRIVATE SHOWING & INQUIRY FORM -->
+        <div id="inquiry" class="w-full pt-4">
+            <div class="border border-brand-border bg-white p-8 sm:p-10 max-w-2xl mx-auto space-y-6">
+                <div class="text-center space-y-1.5">
+                    <h3 class="text-xl sm:text-2xl font-serif italic text-brand-navy">Request Private Showing & Documents</h3>
+                    <p class="text-xs font-mono text-brand-muted">Confidential financial breakdown, commercial lease details, and private walkthroughs.</p>
+                </div>
+
+                <!-- SUCCESS CONFIRMATION PANEL -->
+                <div id="showing-success-panel"
+                    class="hidden p-6 bg-brand-surface border border-brand-accent text-brand-navy space-y-2">
+                    <div class="flex items-center gap-2 font-mono text-xs font-bold uppercase text-brand-accent">
+                        <i data-lucide="check-circle" class="w-4 h-4"></i>
+                        <span>Request Transmitted</span>
+                    </div>
+                    <p class="font-serif text-lg">Thank you. Your inquiry for 1485 Gerrard Street East has been received.</p>
+                    <p class="text-xs font-mono text-brand-muted leading-relaxed">
+                        Eric Poon will contact you directly within one business day to coordinate access protocols and provide requested documentation.
+                    </p>
+                </div>
+
+                <!-- NATIVE NETLIFY PROPERTY INTAKE FORM -->
+                <form id="showing-form" name="property-inquiry" method="POST" action="/1485-gerrard-east?submitted=true"
+                    data-netlify="true" netlify-honeypot="bot-field" class="space-y-4 text-xs font-mono">
+                    <input type="hidden" name="form-name" value="property-inquiry">
+                    <input type="hidden" name="property" value="1485 Gerrard Street East">
+
+                    <p class="hidden">
+                        <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-brand-muted uppercase mb-1">Full Name *</label>
+                            <input type="text" name="name" required
+                                class="w-full bg-white border border-brand-border px-3 py-2 text-brand-navy focus:outline-none focus:border-brand-accent">
+                        </div>
+                        <div>
+                            <label class="block text-brand-muted uppercase mb-1">Email *</label>
+                            <input type="email" name="email" required
+                                class="w-full bg-white border border-brand-border px-3 py-2 text-brand-navy focus:outline-none focus:border-brand-accent">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-brand-muted uppercase mb-1">Inquiry Type *</label>
+                        <select name="inquiry_type" required
+                            class="w-full bg-white border border-brand-border px-3 py-2 text-brand-navy focus:outline-none focus:border-brand-accent">
+                            <option value="Private Walkthrough">Request Private Walkthrough</option>
+                            <option value="Financials & Rent Roll">Request Financials & Rent Roll</option>
+                            <option value="Zoning & Planning">Zoning, Permitted Uses & Planning</option>
+                            <option value="General Inquiries">General Inquiries</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-brand-muted uppercase mb-1">Message / Preferred Timing</label>
+                        <textarea name="message" rows="3"
+                            class="w-full bg-white border border-brand-border px-3 py-2 text-brand-navy focus:outline-none focus:border-brand-accent"
+                            placeholder="I would like to review documentation or coordinate a walkthrough for 1485 Gerrard St E..."></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full py-3 bg-brand-navy text-white hover:bg-brand-dark tracking-wider uppercase transition-colors font-semibold cursor-pointer">
+                        Submit Request &rarr;
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+
+        (function checkSubmissionState() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('submitted') === 'true') {
+                const successPanel = document.getElementById('showing-success-panel');
+                const formEl = document.getElementById('showing-form');
+                if (successPanel) successPanel.classList.remove('hidden');
+                if (formEl) formEl.classList.add('hidden');
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        })();
+    </script>
+</body>
+
+</html>
